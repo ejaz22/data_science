@@ -50,10 +50,3 @@ df = df.fillna({
 # Conditional replacing Nan Value
 df['new'] = np.where(pd.isnull(df['col1']),0,df['col1']) + df['col2'] # swap in 0 for df['col1'] cells that contain null
 df['X'] = np.where(df['X'].isnull(),"BROKER",df['X']) # change null value only in a series
-
-# Conditional Mapping with np.select
-conditions = [
-            (df['ORIGINATOR']=='Capital One'),
-            (df['ORIGINATOR']=='Meridian Broker')
-            ]
-df['BUSINESS_MIX'] = np.select(conditions,['CAPITAL ONE','MERIDIAN'],default='DIRECT')
