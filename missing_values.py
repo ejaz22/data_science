@@ -111,3 +111,42 @@ new_features = X.columns[mask]
 cols = skb.get_support(indices=True)
 # Create new dataframe with only desired columns, or overwrite existing
 features_df_new = X[cols]
+
+
+# RANDOM NUMBER AND STATISTICAL DISTRIBUTION
+#===================================================================
+
+import random
+import numpy as np
+
+# random.random() : This number is used to generate a float random number less than 1 and greater or equal to 0.
+
+# seed() : this function maps a particular random number with the seed argument mentioned.
+#All random numbers called after the seeded value returns the mapped number.
+
+# Generate a list of number from 1 to 50
+n = range(1,51)  # type list
+n = np.arange(1,51)  # type ndarray
+
+# PRNG - Generate a pseudo-random number between 0 and 1 
+n = random.random()
+
+# Pick a random number between 1 and 100.
+random.randint(1, 100)    
+
+
+# generate normal distribution
+mu, sigma = 0.5, 0.1
+s = np.random.normal(mu, sigma, 1000) #ndarray
+
+# Binomial Distribution
+from scipy.stats import binom
+s = binom.rvs(size=10,n=20,p=0.8)
+
+# Poisson distribution
+from scipy.stats import poisson
+s = poisson.rvs(mu=4, size=10000)
+
+# Bernoulli Distribution
+from scipy.stats import bernoulli
+s = bernoulli.rvs(size=1000,p=0.6)
