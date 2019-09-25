@@ -71,3 +71,43 @@ conditions = [
             (df['ORIGINATOR']=='Meridian Broker')
             ]
 df['BUSINESS_MIX'] = np.select(conditions,['CAPITAL ONE','MERIDIAN'],default='DIRECT')
+
+
+# Univariate Selection
+import pandas
+import numpy
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+
+# feature extraction
+test = SelectKBest(score_func=chi2, k=4)
+fit = test.fit(X, y)
+print(fit.scores_)
+
+
+# Feature Extraction with RFE
+from sklearn.feature_selection import RFE
+model = LogisticRegression()
+rfe = RFE(model, 15)
+fit = rfe.fit(X, y)
+print fit.n_features_ , fit.support_ , fit.ranking_
+
+
+
+# VarianceThreshold
+from sklearn.feature_selection import VarianceThreshold
+sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
+sel.fit_transform(X)
+idxs = sel.get_support(indices=True)
+np.array(X)[:, idxs]
+
+# create dataframe with feature name after running SeletKBest
+from sklearn.feature_selection import SelectKBest, f_classif
+skb = SelectKBest(score_func=f_classif, k=5).fit_transform(X, y)
+mask = skb.get_support()
+new_features = X.columns[mask]
+
+#other way to do th above task
+cols = skb.get_support(indices=True)
+# Create new dataframe with only desired columns, or overwrite existing
+features_df_new = X[cols]
