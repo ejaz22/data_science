@@ -1,6 +1,9 @@
 # MISSING VALUES
 ===================================================
 
+# for pandas tricks
+https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb
+
 # create a column with missing value
 df['Col'] = np.nan
 df['Date']= pd.NaT
