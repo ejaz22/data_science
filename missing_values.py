@@ -4,10 +4,12 @@
 # for pandas tricks
 https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb
 
+# use numpy.r_ to concanecate indices
+df.iloc[:,np.r_[0,1,51:102]]
+
 # create a column with missing value
 df['Col'] = np.nan
 df['Date']= pd.NaT
-
 
 # find which column has missing data
 pd.isnull(df).any()
