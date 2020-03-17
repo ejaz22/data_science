@@ -1,6 +1,3 @@
-# MISSING VALUES
-===================================================
-
 # for pandas tricks
 https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb
 
@@ -26,27 +23,27 @@ df[['a','b']].values.sum()
 
 
 # Counting Missing values: missing values are usually excluded by default
-df['column_x'].value_counts()             # excludes missing values
-df.column_x.value_counts(dropna=False) # includes missing values
+df['a'].value_counts()             # excludes missing values
+df['a'].value_counts(dropna=False) # includes missing values
 
 
 # Finding Missing Columns by using a boolean series to filter rows
-df[df['x'].isnull()]        #only show rows where column_x is missing
-df[df['x'].notnull()]       #only show rows where column_x is not missing
+df[df['a'].isnull()]        #only show rows where column_x is missing
+df[df['a'].notnull()]       #only show rows where column_x is not missing
 
 
 # fill NaN
-df['col1'].fillna(value='NA', inplace=True) 
+df['a'].fillna(value='NA', inplace=True) 
 df = df.fillna({
-    'col1': 'missing',
-    'col2': '99.999',
-    'col3': '999',
-    'col4': 'missing',
-    'col5': 'missing',
-    'col6': '99'
+    'a': 'missing',
+    'b': '99.999',
+    'c': '999',
+    'd': 'missing',
+    'e': 'missing',
+    'f': '99'
 })
 
-df['col1'] = df['col1'].replace(-77, np.NaN) # replace values with NaN
+df['a'] = df['a'].replace(-77, np.NaN) # replace values with NaN
 
 
 
@@ -189,8 +186,8 @@ sns.set(style='whitegrid')
 
 
 # read files
-train = pd.read_csv(r'C:\Users\thw202\Desktop\kaggle\train.csv')
-test = pd.read_csv(r'C:\Users\thw202\Desktop\kaggle\test.csv')
+train = pd.read_csv(r'train.csv')
+test = pd.read_csv(r'test.csv')
 train_len = len(train)
 # combine data and inspect data types
 df = pd.concat([train, test], axis=0, ignore_index=True)
