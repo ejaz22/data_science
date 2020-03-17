@@ -1,2 +1,2 @@
-# pandas
-Pandas tips and trick
+# My Notes
+My notes on datascience.
