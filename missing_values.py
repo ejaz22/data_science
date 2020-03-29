@@ -1,6 +1,10 @@
 # for pandas tricks
 https://nbviewer.jupyter.org/github/justmarkham/pandas-videos/blob/master/top_25_pandas_tricks.ipynb
 
+   
+# pandas top 10 categories with count
+df['a'].value_counts().nlargest(10)
+
 # use numpy.r_ to concanecate indices
 df.iloc[:,np.r_[0,1,51:102]]
 
