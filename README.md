@@ -1,3 +1,16 @@
+## Topics to explore
+
+- Embeddings creation techniques (transfer Learning) like ELMo, ULMFiT, BERT
+- Sequential modelling (CRF, LSTM etc)
+- Word embeddings (Glove, Word2vec)
+- look-alike modelling
+- Optimization Softwares Gurobi or CPLEX
+- Optimization Solutions using Linear or Mixed integer programming
+
+
+
+
+
 # My Notes
 My notes on datascience.
 
