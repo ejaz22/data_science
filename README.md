@@ -6,6 +6,8 @@
 - look-alike modelling
 - Optimization Softwares Gurobi or CPLEX
 - Optimization Solutions using Linear or Mixed integer programming
+- probability and stochastic processes, 
+- priors and posteriors.
 
 
 
